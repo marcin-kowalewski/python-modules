@@ -252,19 +252,22 @@ def secant(f, x0, x1, tol=1e-12, max_iter=100):
         "history": history
     }
 
-def show(wynik):
+def show(wyniki):
     print(
+        f"{'Metoda':<20}"
         f"{'Pierwiastek':>20}"
         f"{'Iteracje':>12}"
         f"{'Residuum':>18}"
         f"{'Zbieżność':>12}"
     )
 
-    print("-" * 62)
+    print("-" * 82)
 
-    print(
-        f"{float(wynik['root']):>20.12f}"
-        f"{wynik['iterations']:>12}"
-        f"{float(wynik['residual']):>18.5e}"
-        f"{str(wynik['converged']):>12}"
-    )
+    for nazwa, wynik in wyniki.items():
+        print(
+            f"{nazwa:<20}"
+            f"{float(wynik['root']):>20.12f}"
+            f"{wynik['iterations']:>12}"
+            f"{float(wynik['residual']):>18.5e}"
+            f"{str(wynik['converged']):>12}"
+        )
