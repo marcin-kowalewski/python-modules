@@ -271,3 +271,4 @@ def show(wynik, metoda=""):
         f"{float(wynik['residual']):>18.5e}"
         f"{str(wynik['converged']):>12}"
     )
+    print()
